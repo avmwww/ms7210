@@ -1,15 +1,16 @@
 #
 # Example:
-#  KERN_SRC=~/projects/linux
+#  KDIR=~/projects/linux
 #  ARCH=arm64
 
+KDIR ?= /lib/modules/`uname -r`/build
 obj-m := ms7210.o
 
 all:
-	$(MAKE) -C $(KERN_SRC) M=$(PWD) modules
+	$(MAKE) -C $(KDIR) M=$(PWD) modules
 clean:
-	$(MAKE) -C $(KERN_SRC) M=$(PWD) clean
+	$(MAKE) -C $(KDIR) M=$(PWD) clean
 
 install:
-	$(MAKE) -C $(KERN_SRC) M=$(PWD) modules_install
+	$(MAKE) -C $(KDIR) M=$(PWD) modules_install
 
