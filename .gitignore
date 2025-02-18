@@ -1,0 +1,12 @@
+.*
+*~
+tags
+*.elf
+*.bin
+*.o
+*.exe
+*.gz
+*.tgz
+*.ko
+obj/
+build/
